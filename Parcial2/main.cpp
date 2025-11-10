@@ -20,12 +20,12 @@ int main() {
     cout << "Ingrese el capital a invertir: $"<< endl;
     cin >> CAPITAL;
 
-    // CARGO LAS TASAS SIN VALIDACIÓN
+    // CARGO LAS TASAS SIN VALIDACIÃ“N
     for(int i = 0; i < bancos; i++) {
         system("cls");
         cout << "Ingrese las 3 tasas anuales en % de " << nombreBancos[i];
         for(int j = 0; j < anios; j++) {
-            cout << "  Año " << j+1 << ": ";
+            cout << "  AÃ±o " << j+1 << ": ";
             cin >> tasas[i][j];
         }
         cout << endl;
@@ -65,11 +65,12 @@ int main() {
     }
 
     // MUESTRO LOS RESULTADOS
+   cout << fixed << setprecision(2);
     cout << "--- RESULTADOS ---\n";
     for(int i = 0; i < bancos; i++) {
         cout << nombreBancos[i] << ":\n";
         cout << "  Promedio anual: " << promedio[i] << endl;
-        cout << "  Monto final (1 año): $" << anual[i] << endl;
+        cout << "  Monto final (1 aÃ±o): $" << anual[i] << endl;
         cout << "  Monto final (trimestres): $" << trimestre[i] << endl;
         cout << "  Monto final (meses): $" << mes[i] << endl;
     }
@@ -85,7 +86,7 @@ int main() {
         if(trimestre[i] > mejor) { mejor = trimestre[i]; mejorBanco = i; modo = "Trimestral"; }
         if(mes[i] > mejor) { mejor = mes[i]; mejorBanco = i; modo = "Mensual"; }
     }
-
+   cout << fixed << setprecision(2);
     cout << "=== RECOMENDACION ===\n";
     cout << "Banco recomendado: " << nombreBancos[mejorBanco] << endl;
     cout << "Mejor modalidad: " << modo << endl;
@@ -94,4 +95,5 @@ int main() {
 
     return 0;
 }
+
 
